@@ -12,7 +12,7 @@ func TestGetPermission(t *testing.T) {
 	t.Log("Start test GetPermission Func with limit number 100")
 	limitNum := 100
 	aIP := "127.0.0.1"
-	for i := 1; i < 100; i++ {
+	for i := 1; i <= limitNum; i++ {
 		isTrue, err := c.GetPermission(aIP, limitNum)
 		if err != nil {
 			t.Error(err)
@@ -61,7 +61,7 @@ func TestGetNumber(t *testing.T) {
 	t.Log("Start test GetPermission Func with limit number 100")
 	limitNum := 100
 	aIP := "127.0.0.1"
-	for i := 1; i < 100; i++ {
+	for i := 1; i <= limitNum; i++ {
 		_, err := c.GetPermission(aIP, limitNum)
 		if err != nil {
 			t.Error(err)

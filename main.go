@@ -10,12 +10,13 @@ import (
 	"github.com/labstack/echo/middleware"
 )
 
-var limit = 61
+var limit = 60
+var intervalSec = 60
 var port = "80"
 
 func main() {
 	port = os.Getenv("PORT")
-	e := EchoEngine(limit, nil)
+	e := EchoEngine(intervalSec, nil)
 	// Start server
 	e.Logger.Fatal(e.Start(":" + port))
 }
@@ -43,7 +44,7 @@ func (s *state) permission() echo.MiddlewareFunc {
 					return next(c)
 				}
 			}
-			allow, err := s.cal.GetPermission(c.RealIP(), 61)
+			allow, err := s.cal.GetPermission(c.RealIP(), limit)
 			if err != nil {
 				log.Println(err)
 				return echo.NewHTTPError(http.StatusInternalServerError, "Error, ", err)

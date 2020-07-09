@@ -39,9 +39,9 @@ func (c *Counter) GetPermission(ip string, limit int) (result bool, err error) {
 	}()
 	defer c.rw.Unlock()
 	c.rw.Lock()
-	if val, ok := c.number[ip]; ok {
+	if _, ok := c.number[ip]; ok {
 		c.number[ip]++
-		result = val+1 < limit
+		result = c.number[ip] <= limit
 		return result, err
 	}
 	c.number[ip] = 1
