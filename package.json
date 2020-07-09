@@ -1,0 +1,20 @@
+{
+  "name": "Counter",
+  "version": "1.0.0",
+  "description": "A request counter service base on echo framework.",
+  "main": "index.js",
+  "scripts": {
+    "start": "go run main.go"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h9896/Counter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h9896/Counter/issues"
+  },
+  "homepage": "https://github.com/h9896/Counter#readme"
+}
