@@ -71,6 +71,11 @@ func TestGetNumber(t *testing.T) {
 			t.Error("GetNumber ", val, " and request times are not equal")
 		}
 	}
+	nonIP := "127.0.0.2"
+	val := c.GetNumber(nonIP)
+	if val != 0 {
+		t.Error("GetNumber ", val, " and request times are not equal")
+	}
 }
 
 func TestGetAllNumber(t *testing.T) {
