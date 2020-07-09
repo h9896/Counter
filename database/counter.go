@@ -46,7 +46,7 @@ func (c *Counter) GetPermission(ip string, limit int) (result bool, err error) {
 	}
 	c.number[ip] = 1
 	go c.resetTimer(ip)
-	result = true
+	result = c.number[ip] <= limit
 	return result, err
 }
 
