@@ -8,3 +8,5 @@ The [getRequest](https://morning-taiga-80604.herokuapp.com/) will get the number
 The [getAllRequest](https://morning-taiga-80604.herokuapp.com/all) will get all the number of requests for all IPs in one minute.
 
 An error will occur if the limit is exceeded.
+
+This app can run local with command npm start
